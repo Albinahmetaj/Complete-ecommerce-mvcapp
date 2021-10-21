@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ProductModel>
+<h2>Edit items</h2>
+<a asp-action="Create" asp-controller="Product">Create</a> |
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photopath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorCategory.ColorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductId)
+                </td>
+                <td>
+                    <img src="~/Images/@item.Photopath" style="width:100px;height:100px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ColorCategory.ColorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-controller="Product" asp-route-productid="@item.ProductId">Edit</a> |
+
+                </td>
+            </tr>
+        }
+
+
+
+        @*@foreach (var product in Model)
+            {
+
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+
+                        <img src="~/images/@product.Photopath" style="width:300px; height:400px;" />
+                        <div class="caption">
+                            <h3 class="pull-right">@product.Price</h3>
+                            <h3>
+                                <a asp-controller="Product"
+                                   asp-action="Details"
+                                   asp-route-productId="@product.ProductId">@product.Titel</a>
+                            </h3>
+
+                            <p>@product.ShortDescription</p>
+                        </div>
+                        <div class="addToCart">
+                            <p><a asp-action="Edit" asp-controller="Product" asp-route-productId="@product.ProductId">Edit</a></p>
+                            <p><a asp-action="Delete" asp-controller="Product" asp-route-productId="@product.ProductId">Delete</a></p>
+                            <p class="button">
+                                <a class="btn btn-primary"
+                                   asp-controller="ShoppingCart"
+                                   asp-action="AddToShoppingCart"
+                                   asp-route-productId="@product.ProductId">Add to cart</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            }*@
+    </tbody>
+</table>

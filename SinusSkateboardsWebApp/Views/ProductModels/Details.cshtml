@@ -1,0 +1,68 @@
+﻿@model SinusSkateboardsWebApp.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Titel)
+        </dd>
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LongDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Photopath)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Photopath)
+        </dd>
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSaleOfTheWeek)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsSaleOfTheWeek)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

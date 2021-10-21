@@ -1,0 +1,13 @@
+﻿@model IEnumerable<SinusSkateboardsWebApp.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@foreach (var product in Model)
+{
+    <partial name="_ProductView" model="product" />
+
+    
+}

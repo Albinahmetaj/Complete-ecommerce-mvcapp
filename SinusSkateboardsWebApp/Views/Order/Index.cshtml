@@ -1,0 +1,40 @@
+﻿@model List<Order>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+<h2>Orders</h2>
+
+<table style="width:95%">
+    <tr>
+        <th>Ordernumber</th>
+        <th>Order placed</th>
+        
+    </tr>
+</table>
+
+@foreach (var item in Model)
+{
+
+
+    @*<h4>Ordernumber: @item.Ordernumber</h4>
+    <h4>Order placed: @item.OrderPlaced</h4>
+    <a asp-action="Details" asp-controller="Order" asp-route-id="@item.OrderId">Check order <br /></a>*@
+
+
+    <table style="width:90%">
+        <tr>
+            
+            <td>@item.Ordernumber</td>
+
+            <td>@item.OrderPlaced</td>
+
+          
+            <td><a asp-action="Details" asp-controller="Order" asp-route-id="@item.OrderId">Check order <br /></a></td>
+        </tr>
+    </table>
+
+
+
+}

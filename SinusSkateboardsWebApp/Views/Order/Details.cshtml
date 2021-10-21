@@ -1,0 +1,27 @@
+﻿@model Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<h2>Order Details</h2>
+
+<h2>Name: @Model.FirstName @Model.LastName</h2>
+<h4>Address: @Model.AddressLine1</h4>
+<h4>Zipcode: @Model.ZipCode</h4>
+<h4>City: @Model.City</h4>
+<h4>Phonenumber: @Model.PhoneNumber</h4>
+
+<br />
+
+@foreach (var item in Model.OrderDetails)
+{
+    
+
+
+
+    <p>Productid: @item.ProductId - Product: @item.Product.Titel - Color: @item.Product.ColorCategory.ColorName - Price: @item.Price.ToString("c") - Quantity: @item.Amount</p>
+
+}
+
